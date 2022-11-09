@@ -6,16 +6,23 @@ import Title from '../../layout/Title';
 
 const MyReview = () => {
     const [myreview, setMyreview] = useState([]);
-    const {user} = useContext(AuthContext);
+    const {user, logOut} = useContext(AuthContext);
     useEffect(() => {
       fetch(`http://localhost:5000/reviews/?email=${user?.email}`,{
         headers:{
           authorization: `Bearer ${localStorage.getItem('aero-token')}`
         }
       })
-        .then((res) => res.json())
+        .then((res) => {
+          if(res.status === 401 || res.status === 403){
+            logOut()
+            .then(()=>{})
+            .catch(error=>console.log(error))
+          }
+          return res.json()
+        })
         .then((data) => setMyreview(data));
-    }, [user?.email]);
+    }, [user?.email,logOut]);
 
     const handleDelete = (id) => {
       const proceed = window.confirm(
