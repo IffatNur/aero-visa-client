@@ -4,17 +4,17 @@ import { FaPlaneDeparture } from "react-icons/fa";
 import { AuthContext } from '../../contexts/AuthProvider';
 import { toast, ToastContainer } from 'react-toastify';
 
-export const successful = () =>
-  toast.success("Congratulations! ", {
-    position: "top-center",
-    autoClose: 700,
-    hideProgressBar: false,
-    closeOnClick: true,
-    pauseOnHover: true,
-    draggable: true,
-    progress: undefined,
-    theme: "light",
-  });
+// export const successful = () =>
+//   toast.success("Congratulations! ", {
+//     position: "top-center",
+//     autoClose: 700,
+//     hideProgressBar: false,
+//     closeOnClick: true,
+//     pauseOnHover: true,
+//     draggable: true,
+//     progress: undefined,
+//     theme: "light",
+//   });
 const Header = () => {
   const {user, logOut} = useContext(AuthContext);
   
@@ -135,7 +135,7 @@ const Header = () => {
               )}
             </ul>
           </div>
-            <ToastContainer></ToastContainer>
+            {/* <ToastContainer></ToastContainer> */}
         </div>
       </div>
     );

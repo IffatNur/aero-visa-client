@@ -5,7 +5,7 @@ import ReviewForm from '../../components/ReviewForm/ReviewForm';
 import ReviewCard from '../../components/ReviewCard/ReviewCard';
 import { AuthContext } from '../../contexts/AuthProvider';
 import Title from '../../layout/Title';
-import { successful } from '../../components/Header/Header';
+// import { successful } from '../../components/Header/Header';
 
 const ServiceDetails = () => {
     const {_id, img, title, description, price, rating} = useLoaderData();
@@ -48,7 +48,7 @@ const ServiceDetails = () => {
         if (data.acknowledged >0) {
           const newReviews = [reviewInfo,...reviews];
           setReviews(newReviews);
-          successful();
+          // successful();
           form.reset();
         }
       })
