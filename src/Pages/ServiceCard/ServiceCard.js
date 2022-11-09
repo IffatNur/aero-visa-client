@@ -16,7 +16,7 @@ const ServiceCard = ({service}) => {
                 <small>Price: ${price}</small>
                 <small>Rating: {rating}</small>
             </div>
-            <Link to={`${_id}`} className="card-actions justify-end">
+            <Link to={`/services/${_id}`} className="card-actions justify-end">
               <button className="btn btn-primary">View Details</button>
             </Link>
           </div>

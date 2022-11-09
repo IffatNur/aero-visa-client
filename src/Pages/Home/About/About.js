@@ -16,7 +16,7 @@ const About = () => {
           </h1>
           <p className="text-xl my-5 w-3/4">
             People having issues with immigration and visa related information.
-            All our intention is to provide best service about it and make
+            The main intention is to provide best service about it and make
             immigration a journey of pleasure.
           </p>
         </div>

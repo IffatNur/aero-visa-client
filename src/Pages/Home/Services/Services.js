@@ -9,7 +9,6 @@ const Services = () => {
           .then((res) => res.json())
           .then((error) => setServices(error));
     },[])
-    console.log(services);
     return (
       <div className="text-center mx-10">
         <h1 className="text-4xl font-bold text-yellow-600 my-4">

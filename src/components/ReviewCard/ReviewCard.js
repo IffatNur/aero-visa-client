@@ -8,7 +8,7 @@ const ReviewCard = ({ reviewDetail }) => {
         <div className="card-body text-start">
           <div className="flex items-center">
             <figure>
-              <img className="rounded-full h-14 w-14" src={img} alt="Movie" />
+              <img className="rounded-full h-14 w-14 mr-5" src={img} alt="Movie" />
             </figure>
             <small className="font-bold">{email}</small>
           </div>

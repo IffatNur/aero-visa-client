@@ -4,7 +4,6 @@ import ServiceCard from '../ServiceCard/ServiceCard';
 
 const AllService = () => {
     const allServices = useLoaderData();
-    console.log(allServices.length);
     return (
       <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mx-20 my-10">
         {allServices.map((service) => (

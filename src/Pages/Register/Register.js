@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../contexts/AuthProvider';
 import image from "../../image/bg.png";
 
 const Register = () => {
+  const {createUser, updateUser} = useContext(AuthContext);
     const handleRegister = (event) => {
       event.preventDefault();
       const form = event.target;
@@ -11,6 +13,17 @@ const Register = () => {
       const photo = form.photo.value;
       const password = form.password.value;
       console.log(name,email, photo, password);
+
+      createUser(email, password)
+      .then(result =>{
+        const user = result.user;
+        console.log(user);
+        
+        updateUser(name, photo)
+        .then(()=>{})
+        .catch(error=>console.log(error))
+      })
+      .catch(error=> console.log(error))
     };
     return (
       <div className="grid grid-cols-2 bg-base-200">

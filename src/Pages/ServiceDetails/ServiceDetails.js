@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 import ReviewForm from '../../components/ReviewForm/ReviewForm';
 import ReviewCard from '../../components/ReviewCard/ReviewCard';
+import { AuthContext } from '../../contexts/AuthProvider';
 
 const ServiceDetails = () => {
     const {_id, img, title, description, price, rating} = useLoaderData();
+    const {user} = useContext(AuthContext);
     const [reviews, setReviews] = useState([]);
     useEffect(()=>{
         fetch(
@@ -15,6 +17,40 @@ const ServiceDetails = () => {
         .then(data => setReviews(data));
     },[_id])
 
+    const handleReviewSubmit = (event) => {
+      event.preventDefault();
+      const form = event.target;
+      const email = form.email.value;
+      const review = form.review.value;
+      const rating = form.rating.value;
+      const reviewInfo = {
+        email,
+        review,
+        rating,
+        img: user.photoURL,
+        title: title,
+        service_id: _id
+      };
+      console.log(reviewInfo);
+
+      fetch('http://localhost:5000/reviews',{
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json'
+        },
+        body: JSON.stringify(reviewInfo)
+      })
+      .then(res => res.json())
+      .then(data => {
+        console.log(data)
+        if (data.acknowledged >0) {
+          const newReviews = [reviewInfo,...reviews];
+          setReviews(newReviews);
+        }
+      })
+    };
+
+    
     return (
       <div className="bg-base-200">
         <div className="grid grid-cols-1 lg:grid-cols-2 py-20 mx-20">
@@ -44,7 +80,7 @@ const ServiceDetails = () => {
             <h1 className="text-4xl font-bold text-yellow-600 my-4">
               Give a Review
             </h1>
-            <ReviewForm></ReviewForm>
+            <ReviewForm handleReviewSubmit={handleReviewSubmit}></ReviewForm>
           </div>
           <div className="text-center">
             <h1 className="text-4xl font-bold text-yellow-600 my-4">Reviews</h1>
@@ -52,7 +88,10 @@ const ServiceDetails = () => {
               <div className="carousel-item h-full w-3/4">
                 <div>
                   {reviews.map((review) => (
-                    <ReviewCard key={_id} reviewDetail={review}></ReviewCard>
+                    <ReviewCard
+                      key={review._id}
+                      reviewDetail={review}
+                    ></ReviewCard>
                   ))}
                 </div>
               </div>

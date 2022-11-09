@@ -5,7 +5,7 @@ import { AuthContext } from '../../contexts/AuthProvider';
 
 const Header = () => {
   const {user} = useContext(AuthContext);
-  console.log(user.displayName);
+  // console.log(user.displayName);
     return (
       <div>
         <div className="navbar bg-cyan-900 text-white pb-5">
@@ -33,6 +33,9 @@ const Header = () => {
               >
                 <li>
                   <Link>{user?.displayName}</Link>
+                </li>
+                <li>
+                  <Link className="text-orange-400">{user?.displayName}</Link>
                 </li>
                 <li>
                   <Link to="/">Home</Link>
@@ -77,18 +80,28 @@ const Header = () => {
               <li>
                 <Link to="/reviews">Reviews</Link>
               </li>
-              <li>
-                <Link to="/login">SignIn</Link>
-              </li>
-              <li>
-                <Link to="/register">SignUp</Link>
-              </li>
-              <li>
-                <Link>SignOut</Link>
-              </li>
-              <li>
-                <Link className='text-orange-400'>{user?.displayName}</Link>
-              </li>
+
+              {user?.email ? (
+                <>
+                  <li>
+                    <Link>SignOut</Link>
+                  </li>
+                  <li>
+                    <Link className="text-orange-400">
+                      Welcome, {user?.displayName}
+                    </Link>
+                  </li>
+                </>
+              ) : (
+                <>
+                  <li>
+                    <Link to="/login">SignIn</Link>
+                  </li>
+                  <li>
+                    <Link to="/register">SignUp</Link>
+                  </li>
+                </>
+              )}
             </ul>
           </div>
         </div>
