@@ -1,4 +1,5 @@
 import React from 'react';
+import { successful } from '../../components/Header/Header';
 import Title from '../../layout/Title';
 
 const AddService = () => {
@@ -27,6 +28,7 @@ const AddService = () => {
             console.log(data);
             if(data.acknowledged > 0){
                 alert('Services added succefully!');
+                successful();
                 form.reset();
             }
         });
