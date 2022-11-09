@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { FaPlaneDeparture } from "react-icons/fa";
+import { AuthContext } from '../../contexts/AuthProvider';
 
 const Header = () => {
+  const {user} = useContext(AuthContext);
+  console.log(user.displayName);
     return (
       <div>
         <div className="navbar bg-cyan-900 text-white pb-5">
@@ -28,6 +31,9 @@ const Header = () => {
                 tabIndex={0}
                 className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 text-black"
               >
+                <li>
+                  <Link>{user?.displayName}</Link>
+                </li>
                 <li>
                   <Link to="/">Home</Link>
                 </li>
@@ -79,6 +85,9 @@ const Header = () => {
               </li>
               <li>
                 <Link>SignOut</Link>
+              </li>
+              <li>
+                <Link className='text-orange-400'>{user?.displayName}</Link>
               </li>
             </ul>
           </div>
