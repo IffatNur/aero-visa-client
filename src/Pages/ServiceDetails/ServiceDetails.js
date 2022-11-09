@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 import ReviewForm from '../../components/ReviewForm/ReviewForm';
 import ReviewCard from '../../components/ReviewCard/ReviewCard';
@@ -55,7 +55,7 @@ const ServiceDetails = () => {
     
     return (
       <div className="bg-base-200">
-        <Title title='ServiceDetails'></Title>
+        <Title title="ServiceDetails"></Title>
         <div className="grid grid-cols-1 lg:grid-cols-2 py-20 mx-20">
           <div>
             <h1 className="text-4xl font-bold text-yellow-600 my-4">
@@ -91,7 +91,16 @@ const ServiceDetails = () => {
               </>
             ) : (
               <>
-                <p>Please login to give a review</p>
+                <p>
+                  Please{" "}
+                  <Link
+                    className="text-red-700 badge badge-primary badge-outline"
+                    to="/login"
+                  >
+                    login
+                  </Link>{" "}
+                  to give a review
+                </p>
               </>
             )}
           </div>

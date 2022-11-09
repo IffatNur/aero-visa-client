@@ -68,3 +68,26 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+### Projects details
+
+### Technologies
+
+* React
+* Nodejs
+* Tailwind
+* DaisyUI
+
+### Project features and functionalities
+
+* New services can be added.
+* New reviews can be added.
+* User has to be logged in to write a review.
+* In My Review route there is a list of reviews of a particular email(user).
+* Reviews can be edited and deleted.
+* A full screen image will appeare when clicked on a particular service image.
+* A vertical slider in service details page shows reviews of a particular service.
+* Sign up, Sign In, Google Sign In and Sign out options.
+
+
