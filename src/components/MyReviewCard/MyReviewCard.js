@@ -28,7 +28,7 @@ const MyReviewCard = ({ reviewDetail, handleDelete }) => {
           </div>
           <div className="flex justify-between">
             <button>
-              <Link to="/updatereview">
+              <Link to={`/updatereview/${_id}`}>
                 <FaEdit className="text-green-700"></FaEdit>
               </Link>
             </button>

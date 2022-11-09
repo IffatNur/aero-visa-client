@@ -4,8 +4,13 @@ import { FaPlaneDeparture } from "react-icons/fa";
 import { AuthContext } from '../../contexts/AuthProvider';
 
 const Header = () => {
-  const {user} = useContext(AuthContext);
-  // console.log(user.displayName);
+  const {user, logOut} = useContext(AuthContext);
+  
+  const handleLogout = () =>{
+    logOut()
+    .then(()=>{})
+    .then(error=>console.log(error))
+  }
     return (
       <div>
         <div className="navbar bg-cyan-900 text-white pb-5">
@@ -50,13 +55,16 @@ const Header = () => {
                   <Link to="/reviews">Reviews</Link>
                 </li>
                 <li>
+                  <Link to="/blog">Blog</Link>
+                </li>
+                <li>
                   <Link to="/login">SignIn</Link>
                 </li>
                 <li>
                   <Link to="/register">SignUp</Link>
                 </li>
                 <li>
-                  <Link>SignOut</Link>
+                  <button onClick={handleLogout}>SignOut</button>
                 </li>
               </ul>
             </div>
@@ -75,16 +83,18 @@ const Header = () => {
                 <Link to="/services">Services</Link>
               </li>
               <li>
-                <Link to="/addservices">Add Service</Link>
+                <Link to="/addservice">Add Service</Link>
               </li>
               <li>
                 <Link to="/reviews">Reviews</Link>
               </li>
-
+              <li>
+                <Link to="/blog">Blog</Link>
+              </li>
               {user?.email ? (
                 <>
                   <li>
-                    <Link>SignOut</Link>
+                    <button onClick={handleLogout}>SignOut</button>
                   </li>
                   <li>
                     <Link className="text-orange-400">

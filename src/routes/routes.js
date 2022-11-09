@@ -7,6 +7,10 @@ import ServiceDetails from "../Pages/ServiceDetails/ServiceDetails";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import MyReview from "../Pages/MyReview/MyReview";
+import UpdateReview from "../Pages/UpdateReview/UpdateReview";
+import Blog from "../Pages/Blog/Blog";
+import PrivateRoute from "./PrivateRoute";
+import AddService from "../Pages/AddService/AddService";
 
 export const router = createBrowserRouter([
   {
@@ -23,15 +27,17 @@ export const router = createBrowserRouter([
       },
       {
         path: "/login",
-        element: <Login></Login>
+        element: <Login></Login>,
       },
       {
         path: "/register",
-        element: <Register></Register>
+        element: <Register></Register>,
       },
       {
         path: "/services",
-        element: <AllService></AllService>,
+        element: <PrivateRoute>
+          <AllService></AllService>
+        </PrivateRoute>,
         loader: () => fetch("http://localhost:5000/services"),
       },
       {
@@ -41,9 +47,25 @@ export const router = createBrowserRouter([
           fetch(`http://localhost:5000/services/${params.id}`),
       },
       {
-        path: '/reviews',
-        element: <MyReview></MyReview>,
-      }
+        path: "/reviews",
+        element: (
+          <PrivateRoute>
+            <MyReview></MyReview>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/updatereview/:id",
+        element: <UpdateReview></UpdateReview>,
+      },
+      {
+        path: "/blog",
+        element: <Blog></Blog>,
+      },
+      {
+        path: "/addservice",
+        element: <AddService></AddService>
+      },
     ],
   },
 ]);

@@ -72,7 +72,7 @@ const ServiceDetails = () => {
             </small>
           </div>
           <div>
-            <img className="rounded-xl" src={img} alt=""></img>
+            <img className="rounded-xl w-11/12" src={img} alt=""></img>
           </div>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 py-20">
