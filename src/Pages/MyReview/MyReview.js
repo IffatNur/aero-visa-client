@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import MyReviewCard from '../../components/MyReviewCard/MyReviewCard';
 import ReviewCard from '../../components/ReviewCard/ReviewCard';
 import { AuthContext } from '../../contexts/AuthProvider';
+import Title from '../../layout/Title';
 
 const MyReview = () => {
     const [myreview, setMyreview] = useState([]);
@@ -32,13 +33,22 @@ const MyReview = () => {
     };
     return (
       <div className="w-1/2 mx-auto">
-        {myreview.map((review) => (
-          <MyReviewCard
-            key={review._id}
-            reviewDetail={review}
-            handleDelete={handleDelete}
-          ></MyReviewCard>
-        ))}
+        <Title title="MyReviews"></Title>
+        {myreview.length > 0 ? (
+          <>
+            {myreview.map((review) => (
+              <MyReviewCard
+                key={review._id}
+                reviewDetail={review}
+                handleDelete={handleDelete}
+              ></MyReviewCard>
+            ))}
+          </>
+        ) : (
+          <>
+            <p className="text-2xl text-center">No reviews were added</p>
+          </>
+        )}
       </div>
     );
 };

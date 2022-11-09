@@ -1,4 +1,5 @@
 import React from "react";
+import Title from "../../layout/Title";
 import About from "./About/About";
 import Banner from "./Banner/Banner";
 import "./Home.css";
@@ -8,6 +9,7 @@ import Services from "./Services/Services";
 const Home = () => {
   return (
     <div className="mx-auto">
+      <Title title="Home"></Title>
       <Banner></Banner>
       <Services></Services>
       <About></About>

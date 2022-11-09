@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider';
 import image from "../../image/bg.png";
+import Title from '../../layout/Title';
 
 const Register = () => {
   const {createUser, updateUser} = useContext(AuthContext);
@@ -27,6 +28,7 @@ const Register = () => {
     };
     return (
       <div className="grid lg:grid-cols-2 bg-base-200">
+        <Title title="SignUp"></Title>
         <div className="mt-20">
           <img src={image} alt="" />
         </div>

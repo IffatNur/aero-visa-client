@@ -1,8 +1,10 @@
 import React from 'react';
+import Title from '../../layout/Title';
 
 const UpdateReview = () => {
     return (
       <div>
+        <Title title="UpdateReview"></Title>
         <div className="hero min-h-screen bg-base-200">
           <div className="hero-content flex-col ">
             <div className="text-center lg:text-left">
@@ -16,7 +18,7 @@ const UpdateReview = () => {
                   </label>
                   <input
                     type="email"
-                    name='email'
+                    name="email"
                     placeholder="email"
                     className="input input-bordered"
                   />
@@ -27,7 +29,7 @@ const UpdateReview = () => {
                   </label>
                   <input
                     type="text"
-                    name='review'
+                    name="review"
                     placeholder="review"
                     className="input input-bordered"
                   />
@@ -38,7 +40,7 @@ const UpdateReview = () => {
                   </label>
                   <input
                     type="text"
-                    name='review'
+                    name="review"
                     placeholder="review"
                     className="input input-bordered"
                   />

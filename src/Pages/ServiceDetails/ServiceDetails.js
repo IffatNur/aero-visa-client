@@ -4,6 +4,7 @@ import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 import ReviewForm from '../../components/ReviewForm/ReviewForm';
 import ReviewCard from '../../components/ReviewCard/ReviewCard';
 import { AuthContext } from '../../contexts/AuthProvider';
+import Title from '../../layout/Title';
 
 const ServiceDetails = () => {
     const {_id, img, title, description, price, rating} = useLoaderData();
@@ -46,6 +47,7 @@ const ServiceDetails = () => {
         if (data.acknowledged >0) {
           const newReviews = [reviewInfo,...reviews];
           setReviews(newReviews);
+          form.reset();
         }
       })
     };
@@ -53,6 +55,7 @@ const ServiceDetails = () => {
     
     return (
       <div className="bg-base-200">
+        <Title title='ServiceDetails'></Title>
         <div className="grid grid-cols-1 lg:grid-cols-2 py-20 mx-20">
           <div>
             <h1 className="text-4xl font-bold text-yellow-600 my-4">

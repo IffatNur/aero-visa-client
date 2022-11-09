@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider';
 import image from '../../image/bg.png';
+import Title from '../../layout/Title';
 
 const Login = () => {
   const { signIn, googleSignin } = useContext(AuthContext);
@@ -36,6 +37,7 @@ const Login = () => {
     }
     return (
       <div className="grid lg:grid-cols-2 bg-base-200">
+        <Title title="SignIn"></Title>
         <div className="hero min-h-screen ">
           <div className="hero-content flex-col ">
             <div className="text-center lg:text-left">

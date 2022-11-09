@@ -1,4 +1,5 @@
 import React from 'react';
+import Title from '../../layout/Title';
 
 const AddService = () => {
     const handleSubmit = (event) =>{
@@ -32,6 +33,7 @@ const AddService = () => {
     }
     return (
       <div>
+        <Title title="AddService"></Title>
         <form onSubmit={handleSubmit} className="mx-auto w-1/2 font-semibold">
           <div className="form-control">
             <label className="label">
