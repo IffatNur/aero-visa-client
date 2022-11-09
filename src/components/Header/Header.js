@@ -37,9 +37,6 @@ const Header = () => {
                 className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 text-black"
               >
                 <li>
-                  <Link>{user?.displayName}</Link>
-                </li>
-                <li>
                   <Link className="text-orange-400">{user?.displayName}</Link>
                 </li>
                 <li>
@@ -49,23 +46,35 @@ const Header = () => {
                   <Link to="/services">Services</Link>
                 </li>
                 <li>
-                  <Link to="/addservices">Add Service</Link>
-                </li>
-                <li>
-                  <Link to="/reviews">Reviews</Link>
-                </li>
-                <li>
                   <Link to="/blog">Blog</Link>
                 </li>
-                <li>
-                  <Link to="/login">SignIn</Link>
-                </li>
-                <li>
-                  <Link to="/register">SignUp</Link>
-                </li>
-                <li>
-                  <button onClick={handleLogout}>SignOut</button>
-                </li>
+                {user?.email ? (
+                  <>
+                    <li>
+                      <Link className="text-orange-400">
+                        Welcome, {user?.displayName}
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/addservice">Add Service</Link>
+                    </li>
+                    <li>
+                      <Link to="/reviews">My Reviews</Link>
+                    </li>
+                    <li>
+                      <button onClick={handleLogout}>SignOut</button>
+                    </li>
+                  </>
+                ) : (
+                  <>
+                    <li>
+                      <Link to="/login">SignIn</Link>
+                    </li>
+                    <li>
+                      <Link to="/register">SignUp</Link>
+                    </li>
+                  </>
+                )}
               </ul>
             </div>
             <Link className="btn btn-ghost normal-case text-xl font-bold ">
@@ -83,16 +92,16 @@ const Header = () => {
                 <Link to="/services">Services</Link>
               </li>
               <li>
-                <Link to="/addservice">Add Service</Link>
-              </li>
-              <li>
-                <Link to="/reviews">Reviews</Link>
-              </li>
-              <li>
                 <Link to="/blog">Blog</Link>
               </li>
               {user?.email ? (
                 <>
+                  <li>
+                    <Link to="/addservice">Add Service</Link>
+                  </li>
+                  <li>
+                    <Link to="/reviews">My Reviews</Link>
+                  </li>
                   <li>
                     <button onClick={handleLogout}>SignOut</button>
                   </li>

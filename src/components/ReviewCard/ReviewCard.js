@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaArrowDown } from 'react-icons/fa';
 
 const ReviewCard = ({ reviewDetail }) => {
   const { img, email, title, review, rating } = reviewDetail;
@@ -18,6 +19,9 @@ const ReviewCard = ({ reviewDetail }) => {
             <small>
               Rating: <span className="text-yellow-500">{rating}</span>
             </small>
+          </div>
+          <div className='mx-auto text-gray-400'>
+            <FaArrowDown></FaArrowDown>
           </div>
         </div>
       </div>

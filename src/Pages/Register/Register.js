@@ -26,7 +26,7 @@ const Register = () => {
       .catch(error=> console.log(error))
     };
     return (
-      <div className="grid grid-cols-2 bg-base-200">
+      <div className="grid lg:grid-cols-2 bg-base-200">
         <div className="mt-20">
           <img src={image} alt="" />
         </div>

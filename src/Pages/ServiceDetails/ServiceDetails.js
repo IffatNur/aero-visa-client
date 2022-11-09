@@ -72,7 +72,7 @@ const ServiceDetails = () => {
             </small>
           </div>
           <div>
-            <img className="rounded-xl w-11/12" src={img} alt=""></img>
+            <img className="rounded-xl w-11/12 my-10" src={img} alt=""></img>
           </div>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 py-20">
@@ -80,12 +80,22 @@ const ServiceDetails = () => {
             <h1 className="text-4xl font-bold text-yellow-600 my-4">
               Give a Review
             </h1>
-            <ReviewForm handleReviewSubmit={handleReviewSubmit}></ReviewForm>
+            {user?.email ? (
+              <>
+                <ReviewForm
+                  handleReviewSubmit={handleReviewSubmit}
+                ></ReviewForm>
+              </>
+            ) : (
+              <>
+                <p>Please login to give a review</p>
+              </>
+            )}
           </div>
           <div className="text-center">
             <h1 className="text-4xl font-bold text-yellow-600 my-4">Reviews</h1>
             <div className="h-96 carousel rounded-box ">
-              <div className="carousel-item h-full w-3/4">
+              <div className="carousel-item h-full w-3/4 mx-auto">
                 <div>
                   {reviews.map((review) => (
                     <ReviewCard

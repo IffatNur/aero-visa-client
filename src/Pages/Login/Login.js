@@ -35,9 +35,9 @@ const Login = () => {
       .catch(error=> console.log(error));
     }
     return (
-      <div className="grid grid-cols-2 bg-base-200">
+      <div className="grid lg:grid-cols-2 bg-base-200">
         <div className="hero min-h-screen ">
-          <div className="hero-content flex-col">
+          <div className="hero-content flex-col ">
             <div className="text-center lg:text-left">
               <h1 className="text-5xl font-bold">Sign In</h1>
             </div>
