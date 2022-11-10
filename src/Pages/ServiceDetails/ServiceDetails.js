@@ -28,7 +28,9 @@ const ServiceDetails = () => {
       const email = form.email.value;
       const review = form.review.value;
       const rating = form.rating.value;
+      const date = new Date();
       const reviewInfo = {
+        date,
         email,
         review,
         rating,
@@ -59,7 +61,6 @@ const ServiceDetails = () => {
 
     return (
       <div className="bg-base-200">
-        {/* <Title title="ServiceDetails"></Title> */}
         <div className="grid grid-cols-1 lg:grid-cols-2 py-20 mx-20">
           <div>
             <h1 className="text-4xl font-bold text-yellow-600 my-4">
