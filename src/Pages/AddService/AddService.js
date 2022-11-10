@@ -35,7 +35,7 @@ const AddService = () => {
     }
     return (
       <div>
-        {/* <Title title="AddService"></Title> */}
+        <h2 className='text-center text-3xl text-orange-600 bg-teal-100 py-4 font-bold'>Fillup the form below to add new service</h2>
         <form onSubmit={handleSubmit} className="mx-auto w-1/2 font-semibold">
           <div className="form-control">
             <label className="label">

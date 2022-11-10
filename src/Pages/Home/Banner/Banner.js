@@ -2,22 +2,23 @@ import React from 'react';
 import image1 from "../../../image/image1.jpg";
 import image2 from "../../../image/image3.jpg";
 import image3 from "../../../image/image2.jpg";
+import './Banner.css'
 
 const Banner = () => {
     return (
       <div>
-        <div className="carousel mb-0" style={{ height: "900px" }}>
-          <div id="slide1" className="carousel-item relative w-full">
+        <div className="carousel  mb-0">
+          <div id="slide1" className="banner-img carousel-item relative w-full">
             <img
               src={image1}
               alt=""
-              className="w-full"
+              className="w-full "
               style={{ height: "60%" }}
             />
 
             <div className="absolute transform -translate-y-1/2  top-60 heading left-64">
-              <h1 className="text-6xl font-bold text-red-700 heading mb-5">
-                Choose Your Destination.
+              <h1 className="text-6xl font-bold text-cyan-400 heading mb-5">
+                Choose Your Destination
               </h1>
 
               <button className="btn btn-warning sm:btn-sm md:btn-md text-black">
@@ -33,7 +34,7 @@ const Banner = () => {
               </a>
             </div>
           </div>
-          <div id="slide2" className="carousel-item relative w-full">
+          <div id="slide2" className="banner-img carousel-item relative w-full">
             <img
               src={image2}
               alt=""
@@ -42,7 +43,7 @@ const Banner = () => {
             />
             <div className="absolute transform -translate-y-1/2  top-60 heading left-64">
               <h1 className="text-6xl font-bold text-white heading mb-5">
-                Get Free Consultation.
+                Follow Your Dreams
               </h1>
               <button className="btn btn-warning sm:btn-sm md:btn-md text-black">
                 Explore
@@ -57,7 +58,7 @@ const Banner = () => {
               </a>
             </div>
           </div>
-          <div id="slide3" className="carousel-item relative w-full">
+          <div id="slide3" className="banner-img carousel-item relative w-full">
             <img
               src={image3}
               alt=""
@@ -66,7 +67,7 @@ const Banner = () => {
             />
             <div className="absolute transform -translate-y-1/2  top-60 heading left-64">
               <h1 className="text-6xl font-bold text-yellow-400 heading mb-5">
-                Skilled & Business Immigration
+                Feel Free To Contact
               </h1>
               <button className="btn btn-warning sm:btn-sm md:btn-md text-black">
                 Explore
