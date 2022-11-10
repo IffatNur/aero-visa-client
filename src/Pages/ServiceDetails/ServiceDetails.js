@@ -12,11 +12,13 @@ const ServiceDetails = () => {
     const {user} = useContext(AuthContext);
     const [reviews, setReviews] = useState([]);
     useEffect(()=>{
-        fetch(
-          `http://localhost:5000/reviews/?service_id=${_id}`
-        )
-        .then(res=> res.json())
-        .then(data => setReviews(data));
+        fetch(`http://localhost:5000/reviews/?service_id=${_id}`, {
+          headers: {
+            authorization: `Bearer ${localStorage.getItem("aero-token")}`,
+          },
+        })
+          .then((res) => res.json())
+          .then((data) => setReviews(data));
     },[_id])
 
     const handleReviewSubmit = (event) => {
@@ -54,7 +56,6 @@ const ServiceDetails = () => {
       })
     };
 
-    
     return (
       <div className="bg-base-200">
         <Title title="ServiceDetails"></Title>

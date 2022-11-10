@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
+import { deleted } from '../../components/Header/Header';
 import MyReviewCard from '../../components/MyReviewCard/MyReviewCard';
 import { AuthContext } from '../../contexts/AuthProvider';
 import Title from '../../layout/Title';
@@ -36,6 +37,7 @@ const MyReview = () => {
             console.log(data);
             if(data.deletedCount){
                 const remaining = myreview.filter(review => review._id !== id);
+                deleted();
                 setMyreview(remaining);
             }
         });

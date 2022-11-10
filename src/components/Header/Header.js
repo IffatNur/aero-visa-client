@@ -16,6 +16,17 @@ export const successful = () =>
     progress: undefined,
     theme: "light",
   });
+export const deleted = () =>
+  toast.error("Review Deleted Successfully! ", {
+    position: "top-center",
+    autoClose: 700,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "light",
+  });
 const Header = () => {
   const {user, logOut} = useContext(AuthContext);
   
