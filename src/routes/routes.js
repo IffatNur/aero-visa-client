@@ -7,7 +7,6 @@ import ServiceDetails from "../Pages/ServiceDetails/ServiceDetails";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import MyReview from "../Pages/MyReview/MyReview";
-import UpdateReview from "../Pages/UpdateReview/UpdateReview";
 import Blog from "../Pages/Blog/Blog";
 import PrivateRoute from "./PrivateRoute";
 import AddService from "../Pages/AddService/AddService";

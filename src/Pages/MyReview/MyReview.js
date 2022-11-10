@@ -2,9 +2,10 @@ import React, { useContext, useEffect, useState } from 'react';
 import { deleted } from '../../components/Header/Header';
 import MyReviewCard from '../../components/MyReviewCard/MyReviewCard';
 import { AuthContext } from '../../contexts/AuthProvider';
-import Title from '../../layout/Title';
+import useTitle from '../../layout/useTitle';
 
 const MyReview = () => {
+  useTitle('My - Review')
     const [myreview, setMyreview] = useState([]);
     const {user, logOut} = useContext(AuthContext);
     useEffect(() => {
@@ -14,11 +15,11 @@ const MyReview = () => {
         }
       })
         .then((res) => {
-          // if(res.status === 401 || res.status === 403){
-          //   logOut()
-          //   .then(()=>{})
-          //   .catch(error=>console.log(error))
-          // }
+          if(res.status === 401 || res.status === 403){
+            logOut()
+            .then(()=>{})
+            .catch(error=>console.log(error))
+          }
           return res.json()
         })
         .then((data) => setMyreview(data));
@@ -62,7 +63,7 @@ const MyReview = () => {
     // };
     return (
       <div className="w-1/2 mx-auto">
-        <Title title="MyReviews"></Title>
+        {/* <Title title="MyReviews"></Title> */}
         {myreview?.length > 0 ? (
           <>
             {myreview.map((review) => (

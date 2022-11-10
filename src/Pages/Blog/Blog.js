@@ -1,10 +1,11 @@
 import React from 'react';
-import Title from '../../layout/Title';
+import useTitle from '../../layout/useTitle';
 
 const Blog = () => {
+  useTitle('Blog');
     return (
       <div className="w-1/2 mx-auto">
-        <Title title='Blog'></Title>
+        
         <div className="collapse border-2 border-x-stone-800 mb-4">
           <input type="checkbox" className="peer" />
           <div className="collapse-title bg-gray-500 text-primary-content peer-checked:bg-teal-900 peer-checked:text-secondary-content">

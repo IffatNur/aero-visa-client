@@ -2,9 +2,10 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider';
 import image from "../../image/bg.png";
-import Title from '../../layout/Title';
+import useTitle from '../../layout/useTitle';
 
 const Register = () => {
+  useTitle('Register');
   const {createUser, updateUser} = useContext(AuthContext);
     const handleRegister = (event) => {
       event.preventDefault();
@@ -28,7 +29,7 @@ const Register = () => {
     };
     return (
       <div>
-        <Title title="SignUp"></Title>
+        {/* <Title title="SignUp"></Title> */}
         <div className="grid lg:grid-cols-2 bg-base-200">
           <div className="mt-20">
             <img src={image} alt="" />

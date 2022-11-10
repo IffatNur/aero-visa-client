@@ -1,8 +1,9 @@
 import React from 'react';
 import { successful } from '../../components/Header/Header';
-import Title from '../../layout/Title';
+import useTitle from '../../layout/useTitle';
 
 const AddService = () => {
+  useTitle('Add - Service')
     const handleSubmit = (event) =>{
         event.preventDefault();
         const form = event.target;
@@ -34,7 +35,7 @@ const AddService = () => {
     }
     return (
       <div>
-        <Title title="AddService"></Title>
+        {/* <Title title="AddService"></Title> */}
         <form onSubmit={handleSubmit} className="mx-auto w-1/2 font-semibold">
           <div className="form-control">
             <label className="label">
