@@ -55,10 +55,6 @@ export const router = createBrowserRouter([
         ),
       },
       {
-        path: "/updatereview/:id",
-        element: <UpdateReview></UpdateReview>,
-      },
-      {
         path: "/blog",
         element: <Blog></Blog>,
       },

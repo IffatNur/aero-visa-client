@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider';
 import image from '../../image/bg.png';
 import Title from '../../layout/Title';
