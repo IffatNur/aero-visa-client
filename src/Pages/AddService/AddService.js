@@ -46,6 +46,7 @@ const AddService = () => {
               name="title"
               placeholder="Service Name"
               className="input input-bordered"
+              required
             />
           </div>
           <div className="form-control ">
@@ -57,6 +58,7 @@ const AddService = () => {
               name="description"
               placeholder="Description"
               className="input input-bordered "
+              required
             />
           </div>
           <div className="form-control ">
@@ -68,6 +70,7 @@ const AddService = () => {
               name="img"
               placeholder="photoURL"
               className="input input-bordered "
+              required
             />
           </div>
           <div className="form-control ">
@@ -79,6 +82,7 @@ const AddService = () => {
               name="price"
               placeholder="Price"
               className="input input-bordered"
+              required
             />
           </div>
           <div className="form-control ">
@@ -90,6 +94,7 @@ const AddService = () => {
               name="rating"
               placeholder="Rating"
               className="input input-bordered "
+              required
             />
           </div>
           <button type="submit" className="btn btn-warning my-5 mx-auto px-14">

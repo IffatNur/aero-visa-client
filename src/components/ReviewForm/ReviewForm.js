@@ -21,7 +21,7 @@ const ReviewForm = ({ handleReviewSubmit }) => {
                   type="email"
                   placeholder="Email"
                   className="input input-bordered"
-                  defaultValue={user?.email}
+                  defaultValue={user?.email} required
                 />
               </div>
               <div className="form-control">
@@ -32,7 +32,7 @@ const ReviewForm = ({ handleReviewSubmit }) => {
                   name="review"
                   type="text"
                   placeholder="Write something"
-                  className="input input-bordered"
+                  className="input input-bordered" required
                 />
               </div>
               <div className="form-control">
